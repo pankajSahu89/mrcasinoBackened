@@ -143,18 +143,20 @@ const CasinoSchema = new mongoose.Schema(
     },
     hotCasino: {
       type: Boolean,
-      default: false
+      default: false,
     },
     recommendedByExperts: {
       type: Boolean,
-      default: false
+      default: false,
     },
     certifiedCasino: {
       type: Boolean,
-      default: false
+      default: false,
     },
     overview: String,
+    content: { type: String, default: "" }, // Rich text HTML content
   },
+
   { timestamps: true }
 );
 
