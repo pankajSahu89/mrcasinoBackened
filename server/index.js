@@ -24,7 +24,11 @@ database.connect();
 
 // Enhanced CORS configuration
 const corsOptions = {
-  origin: ["http://localhost:3000", "https://casino-app-alpha.vercel.app"],
+  origin: [
+    "http://localhost:3000",
+    "https://casino-app-alpha.vercel.app",
+    "https://casino-backened.onrender.com",
+  ],
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: [
     "Content-Type",
