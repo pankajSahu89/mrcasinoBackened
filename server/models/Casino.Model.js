@@ -113,7 +113,7 @@ const CasinoSchema = new mongoose.Schema(
       features: { type: String },
     },
     paymentInfo: {
-      minimumDeposit: { type: Number, default: 0 },
+      minimumDeposit: { type: String },
       withdrawalMethods: { type: String },
       withdrawalTime: String,
       fees: String,
