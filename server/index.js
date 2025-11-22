@@ -26,15 +26,15 @@ database.connect();
 const corsOptions = {
   origin: [
     "http://localhost:3000",
-    "https://casino-app-alpha.vercel.app",
-    "https://casino-backened.onrender.com",
+    "https://mrcasino.vercel.app",
+    "https://mrcasinobackened.onrender.com",
     ""
   ],
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: [
     "Content-Type",
     "Authorization",
-    "x-auth-token",
+    "x-auth-token", 
     "X-Requested-With",
     "Accept",
   ],
