@@ -107,7 +107,7 @@ const CasinoSchema = new mongoose.Schema(
       companyName: { type: String },
       casinoType: [String],
       features: [String],
-    },
+    }, 
     characteristics: {
       casinoType: { type: String },
       features: { type: String },
