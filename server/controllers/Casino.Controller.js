@@ -7,8 +7,22 @@ exports.getAllCasinos = async (req, res) => {
     res.json(casinos);
   } catch (err) {
     res.status(500).json({ message: err.message });
-  }
+  } 
 };
+
+exports.getHomeCasinos = async (req, res) => {
+  try {
+    // Fetch top 10 casinos sorted by order ascending
+    const casinos = await Casino.find()
+      .sort({ order: 1 }) // change to { rating: -1 } if you want top by rating
+      .limit(10)
+      .select("-content");
+    res.json(casinos);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+}; 
+
 
 // Get single casino
 exports.getCasinoById = async (req, res) => {
@@ -206,3 +220,5 @@ exports.getCasinoBySlug = async (req, res) => {
     res.status(500).json({ message: err.message });
   }
 };
+
+ // Get top 10 casinos for home page

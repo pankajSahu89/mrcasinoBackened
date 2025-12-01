@@ -4,7 +4,12 @@ const casinoController = require("../controllers/Casino.Controller");
 const auth = require("../middlewares/auth");
 
 // Get all casinos
+router.get('/homecasino', casinoController.getHomeCasinos);
+
 router.get("/", casinoController.getAllCasinos);
+
+router.get("/slug/:slug", casinoController.getCasinoBySlug);
+
 
 // Get single casino
 router.get("/:id", casinoController.getCasinoById);
@@ -26,4 +31,7 @@ router.put("/reorder/:id", auth, casinoController.updateCasinoOrder);
 
 router.get("/slug/:slug", casinoController.getCasinoBySlug);
 
+
+
 module.exports = router;
+ 
