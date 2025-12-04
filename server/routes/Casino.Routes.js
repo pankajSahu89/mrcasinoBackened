@@ -1,9 +1,11 @@
 const express = require("express");
 const router = express.Router();
 const casinoController = require("../controllers/Casino.Controller");
+
 const auth = require("../middlewares/auth");
 
-// Get all casinos
+
+// Get all casinos 
 router.get('/homecasino', casinoController.getHomeCasinos);
 
 router.get("/", casinoController.getAllCasinos);

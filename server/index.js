@@ -76,6 +76,9 @@ apiRouter.use("/casinos", require("./routes/Casino.Routes"));
 apiRouter.use("/blogs", require("./routes/Blogs.Routes"));
 apiRouter.use("/auth", require("./routes/Auth.Routes"));
 apiRouter.use("/upload", require("./routes/Upload.Routes"));
+apiRouter.use("/", require("./routes/Color.Routes"));
+apiRouter.use("/seo", require("./routes/SEO.Routes"));
+
 
 // Health check endpoint
 apiRouter.get("/health", (req, res) => {
@@ -97,6 +100,8 @@ app.get("/", (req, res) => {
       casinos: "/api/casinos",
       blogs: "/api/blogs",
       auth: "/api/auth",
+      colors: "/api/colors",
+      seo: "/api/seo",
     },
   });
 });
