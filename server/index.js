@@ -78,6 +78,8 @@ apiRouter.use("/auth", require("./routes/Auth.Routes"));
 apiRouter.use("/upload", require("./routes/Upload.Routes"));
 apiRouter.use("/", require("./routes/Color.Routes"));
 apiRouter.use("/seo", require("./routes/SEO.Routes"));
+apiRouter.use("/subscribe", require("./routes/SubscribeEmail.Routes"));
+apiRouter.use("/visitor-logs", require("./routes/VisitorLog.Routes"));
 
 
 // Health check endpoint
@@ -102,6 +104,8 @@ app.get("/", (req, res) => {
       auth: "/api/auth",
       colors: "/api/colors",
       seo: "/api/seo",
+      subscribe: "/api/subscribe",
+      visitorLogs: "/api/visitor-logs",
     },
   });
 });
