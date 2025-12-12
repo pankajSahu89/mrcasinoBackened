@@ -2,6 +2,10 @@ const mongoose = require("mongoose");
 
 const CasinoSchema = new mongoose.Schema(
   {
+    enabled: {
+      type: Number,
+      default: 1,
+    },
     name: {
       type: String,
       required: true,
@@ -93,8 +97,8 @@ const CasinoSchema = new mongoose.Schema(
         "European Countries (General)",
         // Asia
         "India",
-        // Other/Global
-        "Global",
+        // Other/International
+        "International",
       ],
       default: [],
     },
@@ -107,7 +111,7 @@ const CasinoSchema = new mongoose.Schema(
       companyName: { type: String },
       casinoType: [String],
       features: [String],
-    }, 
+    },
     characteristics: {
       casinoType: { type: String },
       features: { type: String },
@@ -153,6 +157,14 @@ const CasinoSchema = new mongoose.Schema(
       type: Boolean,
       default: false,
     },
+     pros: {
+      type: [String],
+      default: [],
+    },
+    cons: {
+      type: [String],
+      default: [],
+    },
     overview: String,
     content: { type: String, default: "" }, // Rich text HTML content
   },
@@ -179,4 +191,3 @@ CasinoSchema.pre("save", function (next) {
 });
 
 module.exports = mongoose.model("Casino", CasinoSchema);
- 
